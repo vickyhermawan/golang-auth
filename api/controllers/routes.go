@@ -7,7 +7,7 @@ func (s *Server) initializeRoutes() {
 	s.Router.HandleFunc("/", middlewares.SetMiddlewareJSON(s.Home)).Methods("GET")
 
 	//Auth Route
-	s.Router.HandleFunc("/login", middlewares.SetMiddlewareJSON(s.Login)).Methods("POST")
-	s.Router.HandleFunc("/register", middlewares.SetMiddlewareJSON(s.Register)).Methods("POST")
+	s.Router.HandleFunc("/api/v1/auth/login", middlewares.SetMiddlewareJSON(s.Login)).Methods("POST")
+	s.Router.HandleFunc("/api/v1/auth/register", middlewares.SetMiddlewareJSON(s.Register)).Methods("POST")
 
 }
